@@ -1,0 +1,28 @@
+learning_rate: 0.001
+batch_size: 32
+num_epochs: 50
+optimizer: Adam
+loss_function: CrossEntropyLoss
+train_data_path: data/processed/train_data
+val_data_path: data/processed/val_data
+checkpoint_path: checkpoints/model_checkpoint.pth
+log_interval: 10
+seed: 42
+device: cuda
+augmentation:
+  enabled: true
+  techniques:
+    - random_flip
+    - random_crop
+    - color_jitter
+    - normalization
+evaluation:
+  metrics:
+    - accuracy
+    - precision
+    - recall
+    - f1_score
+  save_best_model: true
+  early_stopping:
+    enabled: true
+    patience: 5

@@ -1,0 +1,37 @@
+model:
+  name: VisualICL3D
+  type: transformer
+  input_dim: 512
+  output_dim: 256
+  num_layers: 6
+  num_heads: 8
+  dropout_rate: 0.1
+
+training:
+  batch_size: 32
+  learning_rate: 0.001
+  num_epochs: 50
+  weight_decay: 0.0001
+  scheduler:
+    type: cosine
+    warmup_epochs: 5
+
+data:
+  train_data_path: data/processed/train_data.json
+  val_data_path: data/processed/val_data.json
+  test_data_path: data/tests/test_data.json
+  input_size: [224, 224]
+  num_workers: 4
+
+logging:
+  log_dir: logs/
+  log_level: INFO
+
+evaluation:
+  metrics:
+    - accuracy
+    - f1_score
+    - precision
+    - recall
+
+seed: 42
