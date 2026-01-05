@@ -1,0 +1,10 @@
+Action_Dimension,Accuracy,Bins,Performance_Category,Notes
+Translation_X,36.4%,101,Challenging,Fine-grained spatial control
+Translation_Y,27.8%,101,Challenging,Most difficult action to predict
+Translation_Z,64.8%,101,Good,Depth perception aided by MiDaS
+Rotation_X,98.9%,121,Excellent,Pitch rotation well-learned
+Rotation_Y,98.9%,121,Excellent,Yaw rotation well-learned
+Rotation_Z,83.5%,121,Good,Roll rotation moderately learned
+Gripper,91.5%,2,Excellent,Binary action (open/close)
+Overall_Average,71.67%,N/A,Good,Weighted average across all actions
+

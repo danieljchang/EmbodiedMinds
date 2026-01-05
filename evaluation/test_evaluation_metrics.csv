@@ -1,0 +1,35 @@
+Metric,Value,Description
+Dataset_Split,Test (10%),178 test samples from 80/10/10 split
+Model_Checkpoint,Epoch 36,Best model based on validation loss
+Test_Loss,0.2833,Cross-entropy loss on test set
+Overall_Accuracy,71.67%,Average accuracy across all action dimensions
+Translation_X_Accuracy,36.4%,Accuracy for X-axis translation (discrete bins)
+Translation_Y_Accuracy,27.8%,Accuracy for Y-axis translation (discrete bins)
+Translation_Z_Accuracy,64.8%,Accuracy for Z-axis translation (discrete bins)
+Rotation_X_Accuracy,98.9%,Accuracy for X-axis rotation (discrete bins)
+Rotation_Y_Accuracy,98.9%,Accuracy for Y-axis rotation (discrete bins)
+Rotation_Z_Accuracy,83.5%,Accuracy for Z-axis rotation (discrete bins)
+Gripper_Accuracy,91.5%,Accuracy for gripper open/close action
+Best_Performance_Actions,"Rotation X, Rotation Y, Gripper",Actions with >90% accuracy
+Good_Performance_Actions,"Rotation Z, Translation Z",Actions with >60% accuracy
+Challenging_Actions,"Translation X, Translation Y",Actions with <40% accuracy (fine-grained control)
+Model_Architecture,BERT + CLIP + 3D,Multi-modal with object detection and depth
+Text_Encoder,BERT-base-uncased,Instruction encoding
+Vision_Encoder,CLIP-ViT-B/32,Image feature extraction
+3D_Object_Detection,YOLOv8n,Detect objects in scene
+Depth_Estimation,MiDaS,Generate depth maps
+Training_Epochs,42,Stopped early at epoch 42
+Best_Epoch,36,Selected based on validation loss
+Batch_Size,8,Optimized for g5.2xlarge GPU
+Learning_Rate,0.0001,Adam optimizer
+Early_Stopping_Patience,5,Epochs without improvement
+Training_Time,~14 hours,On AWS EC2 g5.2xlarge
+GPU_Memory_Usage,~20GB,Out of 24GB available
+Dataset_Size_Train,1416 samples,80% of total dataset
+Dataset_Size_Val,178 samples,10% of total dataset  
+Dataset_Size_Test,178 samples,10% of total dataset
+Action_Space_Dimensions,7,"[tx, ty, tz, rx, ry, rz, gripper]"
+Translation_Bins,101,Discrete bins for each translation axis
+Rotation_Bins,121,Discrete bins for each rotation axis
+Gripper_Bins,2,Open (0) or Close (1)
+
